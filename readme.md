@@ -8,13 +8,13 @@ This is a very lightweight docker container that uses the [alpine linux distribu
 
 ### Installing Docker
 
-These are the bare bones instructions. For a bit more detail and potential bug fixes, scroll down to the section on [Docker notes][Docker notes].
+These are the bare bones instructions. For a bit more detail and potential bug fixes, scroll down to the section on [DNSection][Docker notes].
 
 1. Download and install [Docker for Windows](https://www.docker.com/docker-windows) (only works with Windows 10 enterprise), [Docker for Mac](https://www.docker.com/docker-mac), or Docker for [Ubuntu](https://www.docker.com/docker-ubuntu) or [Debian](https://www.docker.com/docker-debian).
   * On MacOS we recommend installing docker using brew: `brew cask install docker`
   * On MacOs and Linux, after you install docker you will need to add permissions: `sudo usermod -a -G docker $USER`
-  * On Windows 10 you will need to alter a bunch of settings. See [Docker notes][Docker notes] 
-2. We will henceforth assume that you actually have a functioning version of Docker on your host machine. If you want more details about how to use docker, or getting it set up (particularly in Windows, in Linux and MacOS this is more straightforward), see our [Docker notes][Docker notes].
+  * On Windows 10 you will need to alter a bunch of settings. See [DNSection][Docker notes] 
+2. We will henceforth assume that you actually have a functioning version of Docker on your host machine. If you want more details about how to use docker, or getting it set up (particularly in Windows, in Linux and MacOS this is more straightforward), see our [DNSection][Docker notes].
 
 ### Running the container
 
@@ -40,10 +40,10 @@ $ docker run -it -v C:\LSDTopoTools:/LSDTopoTools lsdtt_alpine_docker
 3. Once you do this you will get a `#` symbol showing that you are inside the container. You can now do *LSDTopoTools* stuff. 
 
 
-### Docker notes
+### [DNSection]:Docker notes
 
 
-The direction of travel in portability seems to be away from https://www.vagrantup.com/[Vagrant] and toward https://www.docker.com/[Docker]. We are not quite sure why this is, since the https://docs.docker.com/[docker documentation] is similar to documentation for the https://www.youtube.com/watch?v=rLDgQg6bq7o[turbo encabulator]. There are many people quite willing to mansplain why Docker is better but before you feel the urge to do that, please refrain: we have drank a bit of the kool-aid and have been testing *LSDTopoTools* with docker. 
+The direction of travel in portability seems to be away from [Vagrant](https://www.vagrantup.com/) and toward [Docker](https://www.docker.com/). We are not quite sure why this is, since the [docker documentation](https://docs.docker.com/) is similar to documentation for the [turbo encabulator](https://www.youtube.com/watch?v=rLDgQg6bq7o). There are many people quite willing to mansplain why Docker is better but before you feel the urge to do that, please refrain: we have drank a bit of the kool-aid and have been testing *LSDTopoTools* with docker. 
 
 #### Docker quick reference
 ***
