@@ -1,20 +1,22 @@
 # The *LSDTopoTools* Alpine distribution
 
+![](./images/LSD-logo.png =250x)
+
 <img src="/images/LSD-logo.png" width="200">
 
-This is a very lightweight docker container that uses the [alpine linux distribution](https://www.alpinelinux.org/). If you download this container from docker hub it is only 88 Mb. The drawback is that it does not have the full functionality of *LSDTopoTools*: routines needing the [Point Cloud Library (PCL)](https://en.wikipedia.org/wiki/Point_Cloud_Library) are not included. The main routine using PCL is the terrace and floodplain extration routine; you will need our `lsdtt_pcl` docker container for that. But most of the basic routines will work with the `lsdtt_alpine` distribution. 
+This is a very lightweight [docker](https://www.docker.com/) container that uses the [alpine linux distribution](https://www.alpinelinux.org/). If you download this container from docker hub it is only 88 Mb. The drawback is that it does not have the full functionality of *LSDTopoTools*: routines needing the [Point Cloud Library (PCL)](https://en.wikipedia.org/wiki/Point_Cloud_Library) are not included. The main routine using PCL is the [terrace and floodplain extration routine](https://www.earth-surf-dynam.net/5/369/2017/); you will need our `lsdtt_pcl` docker container for that. But most of the basic routines will work with the `lsdtt_alpine` distribution. 
 
 ## Instructions
 
 ### Installing Docker
 
-These are the bare bones instructions. For a bit more detail and potential bug fixes, scroll down to the section on [DNSection][Docker notes].
+These are the bare bones instructions. For a bit more detail and potential bug fixes, scroll down to the section on [Docker notes](#docker-notes).
 
 1. Download and install [Docker for Windows](https://www.docker.com/docker-windows) (only works with Windows 10 enterprise), [Docker for Mac](https://www.docker.com/docker-mac), or Docker for [Ubuntu](https://www.docker.com/docker-ubuntu) or [Debian](https://www.docker.com/docker-debian).
   * On MacOS we recommend installing docker using brew: `brew cask install docker`
   * On MacOs and Linux, after you install docker you will need to add permissions: `sudo usermod -a -G docker $USER`
   * On Windows 10 you will need to alter a bunch of settings. See [DNSection][Docker notes] 
-2. We will henceforth assume that you actually have a functioning version of Docker on your host machine. If you want more details about how to use docker, or getting it set up (particularly in Windows, in Linux and MacOS this is more straightforward), see our [DNSection][Docker notes].
+2. We will henceforth assume that you actually have a functioning version of Docker on your host machine. If you want more details about how to use docker, or getting it set up (particularly in Windows, in Linux and MacOS this is more straightforward), see our [Docker notes](#docker-notes).
 
 ### Running the container
 
@@ -39,11 +41,9 @@ $ docker run -it -v C:\LSDTopoTools:/LSDTopoTools lsdtt_alpine_docker
   3. After the `-v` you need to tell docker where the directories are on both the host operating system (in this case `C:\LSDTopoTools`) and the container (in this case `/LSDTopoTools`). These are separated by a colon (`:`).
 3. Once you do this you will get a `#` symbol showing that you are inside the container. You can now do *LSDTopoTools* stuff. 
 
+### Docker notes
 
-### [DNSection]:Docker notes
-
-
-The direction of travel in portability seems to be away from [Vagrant](https://www.vagrantup.com/) and toward [Docker](https://www.docker.com/). We are not quite sure why this is, since the [docker documentation](https://docs.docker.com/) is similar to documentation for the [turbo encabulator](https://www.youtube.com/watch?v=rLDgQg6bq7o). There are many people quite willing to mansplain why Docker is better but before you feel the urge to do that, please refrain: we have drank a bit of the kool-aid and have been testing *LSDTopoTools* with docker. 
+If you want to know all about Docker, make sure to read the [docker documentation](https://docs.docker.com/). A note of warning: Docker documentation is similar to documentation for the [turbo encabulator](https://www.youtube.com/watch?v=rLDgQg6bq7o). Below are some brief notes to help you with the essentials. 
 
 #### Docker quick reference
 ***
@@ -87,9 +87,9 @@ Second, if you have that and have it installed, you might also need to add yours
 1. Logon to Windows as Administrator
 2. Go to Windows Administrator Tools
 3. Look for Windows Computer Management and click on it.
-4. Or you can skip steps 1, right mouse clicking Computer Management, go to more, and select run as administrator and provide Administrator password.
+4. Or you can skip steps 1-3, right mouse clicking Computer Management, go to more, and select run as administrator and provide Administrator password.
 5. Double click docker-users group and add your account as member.
 6. Also add your account to Hyper-V Administrator. This was added when you installed docker for Windows.
 7. Log off from Windows and log back on.
 8. Click on Windows icon on bottom left and start Docker for Windows. This will start docker windows service.
-9. Start Windows Powershell and type docker --version. It will show Docker version 17.09.1-ce, build 19e2cf6. This is the latest version.
+9. Start Windows Powershell and type docker --version. It will show Docker version 17.09.1-ce, build 19e2cf6, or whagtever version you have.
