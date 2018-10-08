@@ -1,6 +1,16 @@
 # The *LSDTopoTools* Alpine distribution
 
-![](./images/LSD-logo.png =250x)
+![](./images/LSD-logo.png | width=200)
+
+Please let this work
+
+![](images/LSD-logo.png | width=200)
+
+Again
+
+![](images/LSD-logo.png =200x)
+
+![](./images/LSD-logo.png =200x)
 
 <img src="/images/LSD-logo.png" width="200">
 
