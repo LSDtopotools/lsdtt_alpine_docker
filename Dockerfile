@@ -14,9 +14,12 @@ RUN apk upgrade -U && \
     apk update && \
     apk add bash && \
     apk add --virtual build-dependencies build-base gcc wget git && \
-    apk add gdal fftw-dev cmake && \
+    apk add fftw-dev cmake && \
     rm -rf /var/cache/apk/* && \
     rm -rf /tmp/*
+    
+RUN apk add gdal --update-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing
+
 
 # update to avoid weird apk error 
 RUN apk update
