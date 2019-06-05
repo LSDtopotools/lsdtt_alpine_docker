@@ -18,7 +18,11 @@ RUN apk upgrade -U && \
     rm -rf /var/cache/apk/* && \
     rm -rf /tmp/*
     
-RUN apk add gdal --update-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing
+RUN apk add \ 
+    --no-cache \
+    --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
+    --repository http://dl-cdn.alpinelinux.org/alpine/edge/main \
+    gdal
 
 
 # update to avoid weird apk error 
