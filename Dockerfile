@@ -13,7 +13,7 @@ MAINTAINER Simon Mudd (simon.m.mudd@ed.ac.uk) and Fiona Clubb (clubb@uni-potsdam
 RUN apk upgrade -U && \
     apk update && \
     apk add bash && \
-    apk add --virtual build-dependencies build-base gcc wget git && \
+    apk add --virtual build-dependencies build-base gcc wget unzip tzdata git && \
     apk add fftw-dev cmake && \
     rm -rf /var/cache/apk/* && \
     rm -rf /tmp/*
@@ -36,3 +36,8 @@ WORKDIR /LSDTopoTools/
 # Copy the startup script
 COPY Start_LSDTT.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/Start_LSDTT.sh
+
+# Copy the script for fetching example data 
+COPY Get_LSDTT_example_data.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/Get_LSDTT_example_data.sh
+

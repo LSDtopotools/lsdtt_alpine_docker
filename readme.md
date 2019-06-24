@@ -4,6 +4,10 @@
 
 This is a very lightweight [docker](https://www.docker.com/) container that uses the [alpine linux distribution](https://www.alpinelinux.org/). If you download this container from docker hub it is only 88 Mb. The drawback is that it does not have the full functionality of *LSDTopoTools*: routines needing the [Point Cloud Library (PCL)](https://en.wikipedia.org/wiki/Point_Cloud_Library) are not included. The main routine using PCL is the [terrace and floodplain extraction routine](https://www.earth-surf-dynam.net/5/369/2017/); you will need our `lsdtt_pcl` docker container for that. But most of the basic routines will work with the `lsdtt_alpine` distribution. 
 
+For full documentation, [see the LSDTopoTools documentation site](https://lsdtopotools.github.io/LSDTT_documentation/).
+
+You can also read [specific installation instruction](https://lsdtopotools.github.io/LSDTT_documentation/LSDTT_installation.html#_installing_lsdtopotools_using_docker).
+
 ## Instructions
 
 ### Installing Docker
