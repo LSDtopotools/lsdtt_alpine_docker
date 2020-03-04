@@ -22,7 +22,7 @@ RUN apk add \
     --no-cache \
     --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
     --repository http://dl-cdn.alpinelinux.org/alpine/edge/main \
-    gdal py-gdal
+    gdal py3-gdal
     
 # Now an incredibly stupid fix to get libproj.so to work
 #RUN ln -s /usr/lib/libproj.so.15 /usr/lib/libproj.so
