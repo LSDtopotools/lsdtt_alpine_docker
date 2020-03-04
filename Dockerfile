@@ -41,3 +41,9 @@ RUN chmod +x /usr/local/bin/Start_LSDTT.sh
 COPY Get_LSDTT_example_data.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/Get_LSDTT_example_data.sh
 
+# Get MuddPILE
+RUN wget https://github.com/LSDtopotools/MuddPILE/blob/master/bin/LSDTT_Alpine/MuddPILEdriver.out?raw=true
+COPY MuddPILEdriver.out /usr/local/bin/
+RUN chmod +x /usr/local/bin/MuddPILEdriver.out
+
+
